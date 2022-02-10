@@ -20,3 +20,14 @@ function moyenne(array $tab)
 {
     return array_sum($tab) / count($tab);
 }
+function tabPremier($num, array $tab)
+{
+    for ($i = 1; $i <= $num; $i++) {
+        if (nombrePremier($i)) {
+            array_push($tab, $i);
+        }
+    }
+    return $tab;
+}
+
+
