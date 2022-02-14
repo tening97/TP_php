@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 require("fonctions.php");
@@ -6,6 +7,7 @@ $num = $_POST['num'];
 $tab = [];
 $tabI = [];
 $tabS = [];
+
 if (isset($ok)) {
     if (is_numeric($num)) {
         if ($num > 10000) {
@@ -22,7 +24,7 @@ if (isset($ok)) {
                 }
             }
         } else {
-             $erreur = "VEUILLEZ ENTREZ UN NOMBRE SUPERIEUR A 1000";
+            $erreur = "VEUILLEZ ENTREZ UN NOMBRE SUPERIEUR A 1000";
         }
     } else {
         $erreur = "Veuillez entrez un nombre";
@@ -38,6 +40,3 @@ if (isset($ok)) {
     header("location:index.php");
 }
 ?>
-<table>
-
-</table>

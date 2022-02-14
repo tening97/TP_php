@@ -5,11 +5,12 @@ session_start();
 <div>
     <form action="controller.php" method="post">
         <legend>
-            <h2> cliquer sur Français ou English pour voir les mois</h2>
+            <h2> Cliquer sur Français ou English pour voir les mois</h2>
         </legend>
         <input type="submit" value="Français" name="okf">
-        <input type="submit" value="Engish" name="oke">
+        <input type="submit" value="English" name="oke">
     </form>
+
     <table>
         <?php
         if (isset($_SESSION['okf'])) {
@@ -79,11 +80,14 @@ session_start();
 
 
 
+
+
     <?php
                 }
             }
     ?>
     </table>
+    <h2><a href="../exo13/index.php">Voire l'exercice 13</a></h2>
 </div>
 <style>
     table {
@@ -92,16 +96,22 @@ session_start();
 
     }
 
-    textarea,
+
     td {
         border: 1px solid black;
         padding: 10px;
     }
 
+
     div {
         display: flex;
         flex-direction: column;
         align-content: center;
+    }
+
+    input,
+    h2 {
+        font-size: 2rem;
     }
 </style>
 <?php

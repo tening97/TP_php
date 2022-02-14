@@ -1,23 +1,53 @@
 <?php
+include_once("fonctions.php");
 
-require("fonctions.php");
-@$a = $_POST['a'];
-@$b = $_POST['b'];
-@$c = $_POST['c'];
-@$d = $_POST['ok'];
-$e = "";
-if (isset($d)) {
-    if (empty($a)) {
-        $e = "Veuillez entrez une valeur";
-    }
-}
+session_start();
+if (isset($_POST['ok'])) {
+    $a = $_POST['a'];
+    $b = $_POST['b'];
+    $c = $_POST['c'];
+    $_SESSION['post'] = $_POST;
+    $arrError = [];
+    validNombre($a, "a", $arrError);
+    validNombre($b, "b", $arrError);
+    validNombre($c, "c", $arrError);
+    if (count($arrError) == 0) {
+        ?>
+        <h2>
+            <?php
+        equationSecondDegre($a, $b, $c);
 
-if (!empty($a) || ($a == 0)  && !empty($b) || ($b == 0) && !empty($c) || ($c == 0)) {
+        if (isset($_SESSION['post'])) {
+            unset($_SESSION['post']);
+        }
+        ?>
+       </h2>  <br> <br>
+     <h2><br> <a href="index.php">Resoudre une autre</a></h2>
 
-    if (is_numeric($a)  && is_numeric($b) && is_numeric($c)) {
+       <h2><a href="../exercice7/index.php">Voire l'exercice 7</a></h2>
 
-        echo equation($a, $b, $c);
+<?php
+    } else {
+        $_SESSION['error'] = $arrError;
+
+        header('location:index.php');
+        exit();
     }
 } else {
-    header("location:index.php");
+    //Redirection
+    header('location:index.php');
+    exit();
 }
+?>
+<style>
+    body {
+
+        display: flex;
+        background-image: url(img.jpeg);
+        background-repeat: no-repeat;
+        align-items: center;
+        justify-content: center;
+
+
+    }
+</style>

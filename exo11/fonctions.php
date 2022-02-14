@@ -29,5 +29,3 @@ function tabPremier($num, array $tab)
     }
     return $tab;
 }
-
-

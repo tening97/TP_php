@@ -1,4 +1,14 @@
 <?php
+function validNombre($nbre, string $key, array &$arrError): void
+{
+    if (empty($nbre)  && ($nbre != 0)) {
+        $arrError[$key] = "Veuillez saisir une valeur";
+    } else {
+        if (!is_numeric($nbre)) {
+            $arrError[$key] = "Veuillez saisir un nombre" ;
+        }
+    }
+}
 function anneeBis($a): bool
 {
     $resultat = false;
@@ -50,17 +60,24 @@ function dateSuivante($j, $m, $a)
                 $a = $a;
             }
         }
-        echo "La date suivante  $j   $m   $a";
+        echo "La date suivante  $j /  $m  / $a";
     } else {
         echo "Date incorrecte";
     }
 }
 function datePrecedente($j, $m, $a)
 {
-    if ($j <= nombreJour($a, $m)) {
-        $j = $j - 1;
-        $m = $m;
-        $a = $a;
+    if (dateValide($j, $m, $a)) {
+        if ($j <= nombreJour($a, $m)) {
+            $j = $j - 1;
+            $m = $m;
+            $a = $a;
+        }
+        echo " La date precedente est $j / $m /$a ";
     }
-    echo " La date precedente est $j  $m $a ";
+    else {
+        echo "Date incorrecte";
+    }
+    
+   
 }

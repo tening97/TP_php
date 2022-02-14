@@ -1,7 +1,7 @@
 <?php
 session_start();
-if (isset($_SESSION['tab'])) {
-}
+// if (isset($_SESSION['tab'])) {
+// }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,41 +22,45 @@ if (isset($_SESSION['tab'])) {
     <table>
         <tr>
             <td>Nombre premier</td>
-            <td>inferieur</td>
-            <td>superieur</td>
+            <td>Nombre inferieur à la moyenne</td>
+            <td>Nombre superieur à la moyenne</td>
         </tr>
-
+        <h2><a href="index.php">Essayer encore</a></h2>
+        <h2><a href="../exo12/index.php">Voire l'exercice 12</a></h2>
         <?php
         if (isset($_SESSION['tab'])) {
+            if (empty($_SESSION['erreur'])) {
+                for ($i = 0; $i < count($_SESSION['tab']); $i++) { ?>
 
+                    <tr>
+                        <td>
+                            <?php
+                            echo $_SESSION['tab'][$i];
+                            ?>
+                        </td>
 
-            for ($i = 0; $i < count($_SESSION['tab']); $i++) { ?>
-                <tr>
-                    <td>
                         <?php
-                        echo $_SESSION['tab'][$i];
+                        if ($i < count($_SESSION['tabI'])) {
+                            echo " <td>" . $_SESSION['tabI'][$i] . "</td>";
+                        }
+
                         ?>
-                    </td>
+
 
                     <?php
-                    if ($i < count($_SESSION['tabI'])) {
-                        echo " <td>" . $_SESSION['tabI'][$i] . "</td>";
+                    if ($i < count($_SESSION['tabS'])) {
+                        echo " <td>" . $_SESSION['tabS'][$i] . "</td>";
                     }
+                }
 
                     ?>
-
-                    
-                        <?php
-                        if ($i < count($_SESSION['tabS'])) {
-                            echo " <td>" . $_SESSION['tabS'][$i] . "</td>";
-                        }
-                        ?>
-                  
-                </tr>
-        <?php }
-        } else {
-            echo "";
+                    </tr>
+            <?php } else {
+                echo $_SESSION['erreur'];
+            }
         } ?>
+
+
 
 
     </table>
@@ -77,13 +81,15 @@ if (isset($_SESSION['tabS'])) {
 }
 ?>
 <style>
+    table {
+        margin: 20px;
+        font-size: 2rem;
 
-table{
-  margin-bottom: 20px;
-}
-textarea, td{
-  border: 1px solid black;
-  padding: 10px;
-}
+    }
 
+    textarea,
+    td {
+        border: 1px solid black;
+        padding: 10px;
+    }
 </style>
