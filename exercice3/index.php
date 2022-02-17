@@ -12,3 +12,5 @@ echo "Le  reste de la division des deux nombres est " . Modulo($num1, $num2);
 echo "<br>";
 echo "L'expnentielle  des deux nombres est " . Expo($num1, $num2);
 echo "<br>";
+?>
+<h2><a href="../exercice4/index.php">Voire l'exercice 4</a></h2>

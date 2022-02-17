@@ -12,19 +12,19 @@ if (isset($_POST['ok'])) {
     validNombre($b, "b", $arrError);
     validNombre($c, "c", $arrError);
     if (count($arrError) == 0) {
-        ?>
+?>
         <h2>
             <?php
-        equationSecondDegre($a, $b, $c);
+            equationSecondDegre($a, $b, $c);
 
-        if (isset($_SESSION['post'])) {
-            unset($_SESSION['post']);
-        }
-        ?>
-       </h2>  <br> <br>
-     <h2><br> <a href="index.php">Resoudre une autre</a></h2>
+            if (isset($_SESSION['post'])) {
+                unset($_SESSION['post']);
+            }
+            ?>
+        </h2> <br> <br>
+        <h2><br> <a href="index.php">Resoudre une autre</a></h2>
 
-       <h2><a href="../exercice7/index.php">Voire l'exercice 7</a></h2>
+        <h2><a href="../exercice7/index.php">Voire l'exercice 7</a></h2>
 
 <?php
     } else {

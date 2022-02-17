@@ -1,0 +1,30 @@
+[
+    {
+        "nom": "NDIAYE",
+        "prenom": "Ibrahima ",
+        "login": "tening",
+        "pwd": "adminf",
+        "role": "visiteur"
+    },
+    {
+        "nom": "NDIAYE",
+        "prenom": "Moustapha Sarr",
+        "login": "teningngom97@gmail.com",
+        "pwd": "adminf",
+        "role": "visiteur"
+    },
+    {
+        "nom": "",
+        "prenom": "",
+        "login": "",
+        "pwd": "",
+        "role": ""
+    },
+    {
+        "nom": "MARI",
+        "prenom": "Fallou",
+        "login": "teningngom97@gmail.com",
+        "pwd": "",
+        "role": ""
+    }
+]

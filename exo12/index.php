@@ -87,7 +87,7 @@ session_start();
             }
     ?>
     </table>
-    <h2><a href="../exo13/index.php">Voire l'exercice 13</a></h2>
+    <h2><a href="../exo14/index.php">Voire l'exercice 14</a></h2>
 </div>
 <style>
     table {

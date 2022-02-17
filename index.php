@@ -12,7 +12,9 @@
     <a href="exo10/index.php">Exercice10</a>
     <a href="exo11/index.php">Exercice11</a>
     <a href="exo12/index.php">Exercice12</a>
-    <a href="exo13/index.php">Exercice13</a>
+    <a href="exo14/index.php">Exercice14</a>
+    <a href="./Application/register.html.php">Application</a>
+
 </div>
 <style>
     div {
@@ -20,7 +22,7 @@
         flex-direction: column;
         font-size: 2rem;
     }
-    
+
     a {
         text-decoration: none;
     }

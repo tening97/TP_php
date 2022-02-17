@@ -3,22 +3,23 @@ session_start();
 include("../exercice6/fonctions.php");
 
 if (isset($_POST['ok'])) {
-    $num=$_POST['num'];
+    $num = $_POST['num'];
     $erreur = [];
     validNombre($num, "num", $erreur);
     if (count($erreur) == 0) {
-        echo"La table de multiplication de $num est <br>";
+        echo "  <h2> La table de multiplication de $num est  <h2><br>";
         for ($i = 1; $i <= 10; $i++) {
             $multi = $num * $i;
-            echo "$num * $i= $multi <br>";
+?>
+            <h2><?php echo "$num * $i= $multi" ?></h2>
+
+<?php
         }
-    }
-    else {
-        $_SESSION['erreur']=$erreur;
+    } else {
+        $_SESSION['erreur'] = $erreur;
         header("location:index.php");
-    }   
-}   
-else {
+    }
+} else {
     header("location:index.php");
 }
 ?>
